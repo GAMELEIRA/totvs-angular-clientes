@@ -1,0 +1,54 @@
+<div class="container">
+
+<h1>Clientes</h1>
+
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+       
+        <tr>
+            <th>Unit</th>
+            
+            <th>Cgc</th>
+            
+            <th>Id</th>
+            
+            <th>Name</th>
+       
+        </tr>
+    
+    </thead>
+
+    <tbody>
+    
+        <tr *ngFor="let cliente of clientes">
+    
+            <th> {{cliente.unit}} </th>
+
+            <th> {{cliente.cgc}} </th>
+
+            <th> {{cliente.id}} </th>
+
+            <th> {{cliente.name}} </th>
+
+        </tr>
+
+    </tbody>
+
+    <tfoot>
+
+        <tr>
+        
+            <td>
+
+                <img src="../../assets/imagens/totvs-logo-1.png" width="200" height="70">
+
+            </td>
+        
+        </tr>
+    
+    </tfoot>
+
+</table>
