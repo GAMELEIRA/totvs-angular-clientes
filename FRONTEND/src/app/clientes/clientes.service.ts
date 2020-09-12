@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from './cliente';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Data } from './data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
   
-  cliente: Cliente[] = [];
+  data: Data;
 
   constructor(private httpClient: HttpClient) { 
     
   }
 
-  listarClientes(): Observable<Cliente[]> {
+  listarClientes(): Observable<Data> {
 
-    return this.httpClient.get<Cliente[]>("localhost:9999/rest/wsfin677/clients");
+    return this.httpClient.get<Data>("http://localhost:9999/rest/wsfin677/clients");
 
   }
 

@@ -12,6 +12,8 @@ export class ClientesComponent implements OnInit {
 
   clientes: Cliente[] = [];
 
+  cliente: String = "";
+
   constructor(private clienteService: ClientesService) {
 
 
@@ -21,7 +23,9 @@ export class ClientesComponent implements OnInit {
 
     this.clienteService.listarClientes().subscribe((clientes) => {
 
-      this.clientes = clientes;
+      console.log(clientes.clients[0].name);
+
+      this.clientes = clientes.clients;
 
     })
 
