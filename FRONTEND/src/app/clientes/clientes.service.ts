@@ -1,24 +1,25 @@
+import { ClientsResponse } from './ClientsResponse';
 import { Injectable } from '@angular/core';
-import { Cliente } from './cliente';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Data } from './data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
   
-  data: Data;
+  clientsResponse: ClientsResponse
+
+  static contadorPaginacao: number = 1;
 
   constructor(private httpClient: HttpClient) { 
     
   }
 
-  listarClientes(): Observable<Data> {
+  listarClientes(): Observable<ClientsResponse> {
 
-    return this.httpClient.get<Data>("http://localhost:9999/rest/wsfin677/clients");
+    return this.httpClient.get<ClientsResponse>(`http://localhost:9999/rest/wsfin677/clients?page=${ClientesService.contadorPaginacao++}`);
 
   }
 

@@ -1,54 +1,59 @@
 <div class="container">
 
-<h1>Clientes</h1>
+    <h1>Clientes</h1>
 
 </div>
 
-<table class="table table-striped">
+<div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+    (scrolled)="ngOnInit()"> 
 
-    <thead>
-       
-        <tr>
-            <th>Unit</th>
-            
-            <th>Cgc</th>
-            
-            <th>Id</th>
-            
-            <th>Name</th>
-       
-        </tr>
-    
-    </thead>
+    <table class="table table-striped">
 
-    <tbody>
-    
-        <tr *ngFor="let cliente of clientes">
-    
-            <th> {{cliente.unit}} </th>
+        <thead>
 
-            <th> {{cliente.cgc}} </th>
+            <tr>
+                <th>Unit</th>
 
-            <th> {{cliente.id}} </th>
+                <th>Cgc</th>
 
-            <th> {{cliente.name}} </th>
+                <th>Id</th>
 
-        </tr>
+                <th>Name</th>
 
-    </tbody>
+            </tr>
 
-    <tfoot>
+        </thead>
 
-        <tr>
-        
-            <td>
+        <tbody>
 
-                <img src="../../assets/imagens/totvs-logo-1.png" width="200" height="70">
+            <tr *ngFor="let cliente of clientes">
 
-            </td>
-        
-        </tr>
-    
-    </tfoot>
+                <th> {{cliente.unit}} </th>
 
-</table>
+                <th> {{cliente.cgc}} </th>
+
+                <th> {{cliente.id}} </th>
+
+                <th> {{cliente.name}} </th>
+
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+
+                <td>
+
+                    <img src="../../assets/imagens/totvs-logo-1.png" width="200" height="70">
+
+                </td>
+
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+</div>

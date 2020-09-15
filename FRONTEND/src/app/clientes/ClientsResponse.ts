@@ -1,8 +1,9 @@
 import { Cliente } from './cliente';
 
-export interface Data {
+export interface ClientsResponse {
 
     clients : Cliente[]
 
+    hasNext: Boolean
 
 }

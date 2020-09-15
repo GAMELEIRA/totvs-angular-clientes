@@ -23,9 +23,11 @@ export class ClientesComponent implements OnInit {
 
     this.clienteService.listarClientes().subscribe((clientes) => {
 
-      console.log(clientes.clients[0].name);
+      clientes.clients.forEach((cliente)=> {
 
-      this.clientes = clientes.clients;
+        this.clientes.push(cliente);
+
+      })
 
     })
 
