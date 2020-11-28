@@ -18,7 +18,7 @@ import { ClientesComponent } from './clientes/clientes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
+    HttpClientModule,
     InfiniteScrollModule
 
   ],

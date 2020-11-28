@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClientesService {
-  
+
   clientsResponse: ClientsResponse
 
   static contadorPaginacao: number = 1;
 
-  constructor(private httpClient: HttpClient) { 
-    
+  constructor(private httpClient: HttpClient) {
+
   }
 
   listarClientes(): Observable<ClientsResponse> {
